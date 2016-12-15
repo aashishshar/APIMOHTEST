@@ -24,11 +24,7 @@ namespace MOHFW_WEB_API_SERVICE.Controllers
                 return NotFound();
             return Ok(p);
         }
-       // private List<State> States=new List<State>();
-        //public IHttpActionResult Get()
-        //{
-
-        //}
+      
 
     }
 }
