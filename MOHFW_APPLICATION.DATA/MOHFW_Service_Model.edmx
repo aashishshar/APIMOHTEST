@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="NRHM_MIS_AppScanModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="MOH_MST_STATE">
+          <Key>
+            <PropertyRef Name="StateID_N" />
+          </Key>
+          <Property Name="StateID_N" Type="numeric" Precision="38" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StateCode_V" Type="varchar" MaxLength="2" />
+          <Property Name="StateTypeID_N" Type="numeric" Precision="38" Scale="0" />
+          <Property Name="StateName_V" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="AreaCovered_N" Type="numeric" Precision="20" Scale="0" />
+          <Property Name="ActiveFrom_D" Type="datetime" />
+          <Property Name="ActiveTo_D" Type="datetime" />
+          <Property Name="ActiveFlag_C" Type="char" MaxLength="1" />
+          <Property Name="CreatedOn_D" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedOn_D" Type="datetime" />
+          <Property Name="DeletedBy_N" Type="numeric" Precision="38" Scale="0" />
+          <Property Name="DeletedOn_D" Type="datetime" />
+          <Property Name="StagedDate_D" Type="datetime" />
+          <Property Name="StagedFlag_C" Type="char" MaxLength="1" />
+          <Property Name="CreatedBy_N" Type="numeric" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="UpdatedBy_N" Type="numeric" Precision="38" Scale="0" />
+          <Property Name="StateCategory_V" Type="varchar" MaxLength="50" />
+          <Property Name="Remarks_V" Type="varchar" MaxLength="500" />
+          <Property Name="SeqNo_n" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="IsFacilityDelete_C" Type="char" MaxLength="1" />
+          <Property Name="IsFacilityReset" Type="char" MaxLength="1" />
+          <Property Name="PREVIOUS_StateID_N" Type="numeric" Precision="38" Scale="0" />
+          <Property Name="SPLIT_FLAG_C" Type="char" MaxLength="1" />
+        </EntityType>
+        <EntityContainer Name="NRHM_MIS_AppScanModelStoreContainer">
+          <EntitySet Name="MOH_MST_STATE" EntityType="Self.MOH_MST_STATE" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MOHFW_MIS_Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="MOH_MST_STATE">
+          <Key>
+            <PropertyRef Name="StateID_N" />
+          </Key>
+          <Property Name="StateID_N" Type="Decimal" Precision="38" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StateCode_V" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="StateTypeID_N" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="StateName_V" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="AreaCovered_N" Type="Decimal" Precision="20" Scale="0" />
+          <Property Name="ActiveFrom_D" Type="DateTime" Precision="3" />
+          <Property Name="ActiveTo_D" Type="DateTime" Precision="3" />
+          <Property Name="ActiveFlag_C" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="CreatedOn_D" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedOn_D" Type="DateTime" Precision="3" />
+          <Property Name="DeletedBy_N" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="DeletedOn_D" Type="DateTime" Precision="3" />
+          <Property Name="StagedDate_D" Type="DateTime" Precision="3" />
+          <Property Name="StagedFlag_C" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="CreatedBy_N" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="UpdatedBy_N" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="StateCategory_V" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Remarks_V" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="SeqNo_n" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="IsFacilityDelete_C" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="IsFacilityReset" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="PREVIOUS_StateID_N" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="SPLIT_FLAG_C" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="MOHFW_MIS_Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="MOH_MST_STATE" EntityType="Self.MOH_MST_STATE" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="NRHM_MIS_AppScanModelStoreContainer" CdmEntityContainer="MOHFW_MIS_Entities">
+          <EntitySetMapping Name="MOH_MST_STATE">
+            <EntityTypeMapping TypeName="MOHFW_MIS_Model.MOH_MST_STATE">
+              <MappingFragment StoreEntitySet="MOH_MST_STATE">
+                <ScalarProperty Name="StateID_N" ColumnName="StateID_N" />
+                <ScalarProperty Name="StateCode_V" ColumnName="StateCode_V" />
+                <ScalarProperty Name="StateTypeID_N" ColumnName="StateTypeID_N" />
+                <ScalarProperty Name="StateName_V" ColumnName="StateName_V" />
+                <ScalarProperty Name="AreaCovered_N" ColumnName="AreaCovered_N" />
+                <ScalarProperty Name="ActiveFrom_D" ColumnName="ActiveFrom_D" />
+                <ScalarProperty Name="ActiveTo_D" ColumnName="ActiveTo_D" />
+                <ScalarProperty Name="ActiveFlag_C" ColumnName="ActiveFlag_C" />
+                <ScalarProperty Name="CreatedOn_D" ColumnName="CreatedOn_D" />
+                <ScalarProperty Name="UpdatedOn_D" ColumnName="UpdatedOn_D" />
+                <ScalarProperty Name="DeletedBy_N" ColumnName="DeletedBy_N" />
+                <ScalarProperty Name="DeletedOn_D" ColumnName="DeletedOn_D" />
+                <ScalarProperty Name="StagedDate_D" ColumnName="StagedDate_D" />
+                <ScalarProperty Name="StagedFlag_C" ColumnName="StagedFlag_C" />
+                <ScalarProperty Name="CreatedBy_N" ColumnName="CreatedBy_N" />
+                <ScalarProperty Name="UpdatedBy_N" ColumnName="UpdatedBy_N" />
+                <ScalarProperty Name="StateCategory_V" ColumnName="StateCategory_V" />
+                <ScalarProperty Name="Remarks_V" ColumnName="Remarks_V" />
+                <ScalarProperty Name="SeqNo_n" ColumnName="SeqNo_n" />
+                <ScalarProperty Name="IsFacilityDelete_C" ColumnName="IsFacilityDelete_C" />
+                <ScalarProperty Name="IsFacilityReset" ColumnName="IsFacilityReset" />
+                <ScalarProperty Name="PREVIOUS_StateID_N" ColumnName="PREVIOUS_StateID_N" />
+                <ScalarProperty Name="SPLIT_FLAG_C" ColumnName="SPLIT_FLAG_C" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
