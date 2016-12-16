@@ -13,6 +13,8 @@ namespace MOHFW_WEB_API_SERVICE.Controllers
     public class MOHFWController : ApiController
     {
         private IMohfwService mohfwService = new MohfwService();
+
+        [Authorize]
         public IEnumerable<MOH_MST_STATE> Get() 
         {
             return mohfwService.GetStates();
