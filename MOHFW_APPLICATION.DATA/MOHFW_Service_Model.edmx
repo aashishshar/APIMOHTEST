@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="NRHM_MIS_AppScanModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="NRHM_MIS_AppScanModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="MOH_MST_STATE">
           <Key>
             <PropertyRef Name="StateID_N" />
@@ -14,7 +14,7 @@
           <Property Name="StateTypeID_N" Type="numeric" Precision="38" Scale="0" />
           <Property Name="StateName_V" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="AreaCovered_N" Type="numeric" Precision="20" Scale="0" />
-          <Property Name="ActiveFrom_D" Type="datetime" />
+          <Property Name="ActiveFrom_D" Type="datetime" Nullable="false" />
           <Property Name="ActiveTo_D" Type="datetime" />
           <Property Name="ActiveFlag_C" Type="char" MaxLength="1" />
           <Property Name="CreatedOn_D" Type="datetime" Nullable="false" />
@@ -32,12 +32,44 @@
           <Property Name="IsFacilityReset" Type="char" MaxLength="1" />
           <Property Name="PREVIOUS_StateID_N" Type="numeric" Precision="38" Scale="0" />
           <Property Name="SPLIT_FLAG_C" Type="char" MaxLength="1" />
+          <Property Name="Census_Code" Type="varchar" MaxLength="50" />
+          <Property Name="CategoryID_N" Type="int" Nullable="false" />
+          <Property Name="ParentID_N" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="IsArchive_C" Type="char" MaxLength="1" />
+          <Property Name="IsArchive_D" Type="datetime" />
+        </EntityType>
+        <EntityType Name="MOH_TRN_SERVICE_DATA">
+          <Key>
+            <PropertyRef Name="ServiceEntryID_N" />
+          </Key>
+          <Property Name="ServiceEntryID_N" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Code_V" Type="varchar" MaxLength="50" />
+          <Property Name="ServiceCategoryID_N" Type="int" />
+          <Property Name="Value_N" Type="varchar" MaxLength="50" />
+          <Property Name="Name_V" Type="varchar" MaxLength="500" />
+          <Property Name="ModuleID_N" Type="int" />
+          <Property Name="ModuleName_V" Type="varchar" MaxLength="500" />
+          <Property Name="Formid_n" Type="int" />
+          <Property Name="FormName_V" Type="varchar" MaxLength="500" />
+          <Property Name="FinyearID_N" Type="int" />
+          <Property Name="FinYearName_V" Type="varchar" MaxLength="50" />
+          <Property Name="Periodicity_C" Type="char" MaxLength="1" />
+          <Property Name="HMISIndicatorID_N" Type="int" />
+          <Property Name="DetailID_N" Type="int" />
+          <Property Name="DefaultValue_N" Type="varchar" MaxLength="50" />
+          <Property Name="Record_Type" Type="char" MaxLength="1" />
+          <Property Name="Is_Value" Type="bit" />
+          <Property Name="DistrictID_N" Type="int" />
+          <Property Name="DistrictName_V" Type="varchar" MaxLength="100" />
+          <Property Name="StateID_N" Type="int" />
+          <Property Name="StateName_V" Type="varchar" MaxLength="100" />
+          <Property Name="ClientHeaderValue_V" Type="varchar" MaxLength="500" />
         </EntityType>
         <EntityContainer Name="NRHM_MIS_AppScanModelStoreContainer">
           <EntitySet Name="MOH_MST_STATE" EntityType="Self.MOH_MST_STATE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MOH_TRN_SERVICE_DATA" EntityType="Self.MOH_TRN_SERVICE_DATA" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="MOHFW_MIS_Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -50,7 +82,7 @@
           <Property Name="StateTypeID_N" Type="Decimal" Precision="38" Scale="0" />
           <Property Name="StateName_V" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="AreaCovered_N" Type="Decimal" Precision="20" Scale="0" />
-          <Property Name="ActiveFrom_D" Type="DateTime" Precision="3" />
+          <Property Name="ActiveFrom_D" Type="DateTime" Precision="3" Nullable="false" />
           <Property Name="ActiveTo_D" Type="DateTime" Precision="3" />
           <Property Name="ActiveFlag_C" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
           <Property Name="CreatedOn_D" Type="DateTime" Nullable="false" Precision="3" />
@@ -68,10 +100,43 @@
           <Property Name="IsFacilityReset" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
           <Property Name="PREVIOUS_StateID_N" Type="Decimal" Precision="38" Scale="0" />
           <Property Name="SPLIT_FLAG_C" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="Census_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CategoryID_N" Type="Int32" Nullable="false" />
+          <Property Name="ParentID_N" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="IsArchive_C" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="IsArchive_D" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityContainer Name="MOHFW_MIS_Entities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="MOH_MST_STATE" EntityType="Self.MOH_MST_STATE" />
+          <EntitySet Name="MOH_TRN_SERVICE_DATA" EntityType="MOHFW_MIS_Model.MOH_TRN_SERVICE_DATA" />
         </EntityContainer>
+        <EntityType Name="MOH_TRN_SERVICE_DATA">
+          <Key>
+            <PropertyRef Name="ServiceEntryID_N" />
+          </Key>
+          <Property Name="ServiceEntryID_N" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Code_V" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ServiceCategoryID_N" Type="Int32" />
+          <Property Name="Value_N" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Name_V" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="ModuleID_N" Type="Int32" />
+          <Property Name="ModuleName_V" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Formid_n" Type="Int32" />
+          <Property Name="FormName_V" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="FinyearID_N" Type="Int32" />
+          <Property Name="FinYearName_V" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Periodicity_C" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="HMISIndicatorID_N" Type="Int32" />
+          <Property Name="DetailID_N" Type="Int32" />
+          <Property Name="DefaultValue_N" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Record_Type" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="Is_Value" Type="Boolean" />
+          <Property Name="DistrictID_N" Type="Int32" />
+          <Property Name="DistrictName_V" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="StateID_N" Type="Int32" />
+          <Property Name="StateName_V" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ClientHeaderValue_V" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -81,6 +146,11 @@
           <EntitySetMapping Name="MOH_MST_STATE">
             <EntityTypeMapping TypeName="MOHFW_MIS_Model.MOH_MST_STATE">
               <MappingFragment StoreEntitySet="MOH_MST_STATE">
+                <ScalarProperty Name="IsArchive_D" ColumnName="IsArchive_D" />
+                <ScalarProperty Name="IsArchive_C" ColumnName="IsArchive_C" />
+                <ScalarProperty Name="ParentID_N" ColumnName="ParentID_N" />
+                <ScalarProperty Name="CategoryID_N" ColumnName="CategoryID_N" />
+                <ScalarProperty Name="Census_Code" ColumnName="Census_Code" />
                 <ScalarProperty Name="StateID_N" ColumnName="StateID_N" />
                 <ScalarProperty Name="StateCode_V" ColumnName="StateCode_V" />
                 <ScalarProperty Name="StateTypeID_N" ColumnName="StateTypeID_N" />
@@ -104,6 +174,34 @@
                 <ScalarProperty Name="IsFacilityReset" ColumnName="IsFacilityReset" />
                 <ScalarProperty Name="PREVIOUS_StateID_N" ColumnName="PREVIOUS_StateID_N" />
                 <ScalarProperty Name="SPLIT_FLAG_C" ColumnName="SPLIT_FLAG_C" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MOH_TRN_SERVICE_DATA">
+            <EntityTypeMapping TypeName="MOHFW_MIS_Model.MOH_TRN_SERVICE_DATA">
+              <MappingFragment StoreEntitySet="MOH_TRN_SERVICE_DATA">
+                <ScalarProperty Name="ClientHeaderValue_V" ColumnName="ClientHeaderValue_V" />
+                <ScalarProperty Name="StateName_V" ColumnName="StateName_V" />
+                <ScalarProperty Name="StateID_N" ColumnName="StateID_N" />
+                <ScalarProperty Name="DistrictName_V" ColumnName="DistrictName_V" />
+                <ScalarProperty Name="DistrictID_N" ColumnName="DistrictID_N" />
+                <ScalarProperty Name="Is_Value" ColumnName="Is_Value" />
+                <ScalarProperty Name="Record_Type" ColumnName="Record_Type" />
+                <ScalarProperty Name="DefaultValue_N" ColumnName="DefaultValue_N" />
+                <ScalarProperty Name="DetailID_N" ColumnName="DetailID_N" />
+                <ScalarProperty Name="HMISIndicatorID_N" ColumnName="HMISIndicatorID_N" />
+                <ScalarProperty Name="Periodicity_C" ColumnName="Periodicity_C" />
+                <ScalarProperty Name="FinYearName_V" ColumnName="FinYearName_V" />
+                <ScalarProperty Name="FinyearID_N" ColumnName="FinyearID_N" />
+                <ScalarProperty Name="FormName_V" ColumnName="FormName_V" />
+                <ScalarProperty Name="Formid_n" ColumnName="Formid_n" />
+                <ScalarProperty Name="ModuleName_V" ColumnName="ModuleName_V" />
+                <ScalarProperty Name="ModuleID_N" ColumnName="ModuleID_N" />
+                <ScalarProperty Name="Name_V" ColumnName="Name_V" />
+                <ScalarProperty Name="Value_N" ColumnName="Value_N" />
+                <ScalarProperty Name="ServiceCategoryID_N" ColumnName="ServiceCategoryID_N" />
+                <ScalarProperty Name="Code_V" ColumnName="Code_V" />
+                <ScalarProperty Name="ServiceEntryID_N" ColumnName="ServiceEntryID_N" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

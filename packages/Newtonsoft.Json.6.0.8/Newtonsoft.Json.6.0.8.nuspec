@@ -11,6 +11,7 @@
     <iconUrl>http://www.newtonsoft.com/content/images/nugeticon.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Json.NET is a popular high-performance JSON framework for .NET</description>
+    <summary />
     <language>en-US</language>
     <tags>json</tags>
   </metadata>

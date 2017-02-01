@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace MOHFW_WEB_API_SERVICE
+namespace MOHFW_API_SERVICE
 {
     public class FilterConfig
     {

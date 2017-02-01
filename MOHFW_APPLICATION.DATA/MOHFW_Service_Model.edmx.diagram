@@ -6,6 +6,7 @@
     <edmx:Diagrams>
       <Diagram DiagramId="f24e9f2af28e4c2e965ea5d15278808d" Name="Diagram1">
         <EntityTypeShape EntityType="MOHFW_MIS_Model.MOH_MST_STATE" Width="3.25" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MOHFW_MIS_Model.MOH_TRN_SERVICE_DATA" Width="1.5" PointX="5.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

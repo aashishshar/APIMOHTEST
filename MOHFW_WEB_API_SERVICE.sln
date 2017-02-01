@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MOHFW_WEB_API_SERVICE", "MOHFW_WEB_API_SERVICE\MOHFW_WEB_API_SERVICE.csproj", "{ED8D38AB-4671-4D67-B9B0-C9AC8AC439D4}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MOHFW_Application.Service", "MOHFW_APPLICATION.Service\MOHFW_Application.Service.csproj", "{864410AC-68AC-46F3-8D9A-2EBBA4E1E586}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MOHFW_Application.Data", "MOHFW_APPLICATION.DATA\MOHFW_Application.Data.csproj", "{6D58E775-42FA-438E-BED7-A7334C04B8EF}"
@@ -16,16 +14,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DB", "DB", "{2523E871-59C6-
 		TableGenerate.txt = TableGenerate.txt
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MOHFW_CLIENT_WEBAPP", "MOHFW_CLIENT_WEBAPP\MOHFW_CLIENT_WEBAPP.csproj", "{4BA37E2D-D152-46FC-9F39-11B058280EA1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MOHFW_API_SERVICE", "MOHFW_API_SERVICE\MOHFW_API_SERVICE.csproj", "{894D92CD-BC68-4BE0-A8A7-434656A80550}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{ED8D38AB-4671-4D67-B9B0-C9AC8AC439D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{ED8D38AB-4671-4D67-B9B0-C9AC8AC439D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{ED8D38AB-4671-4D67-B9B0-C9AC8AC439D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{ED8D38AB-4671-4D67-B9B0-C9AC8AC439D4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{864410AC-68AC-46F3-8D9A-2EBBA4E1E586}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{864410AC-68AC-46F3-8D9A-2EBBA4E1E586}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{864410AC-68AC-46F3-8D9A-2EBBA4E1E586}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -38,6 +36,14 @@ Global
 		{707B1D4F-E40B-40E9-85A2-5CC10C4B4A64}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{707B1D4F-E40B-40E9-85A2-5CC10C4B4A64}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{707B1D4F-E40B-40E9-85A2-5CC10C4B4A64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BA37E2D-D152-46FC-9F39-11B058280EA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BA37E2D-D152-46FC-9F39-11B058280EA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BA37E2D-D152-46FC-9F39-11B058280EA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BA37E2D-D152-46FC-9F39-11B058280EA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{894D92CD-BC68-4BE0-A8A7-434656A80550}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{894D92CD-BC68-4BE0-A8A7-434656A80550}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{894D92CD-BC68-4BE0-A8A7-434656A80550}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{894D92CD-BC68-4BE0-A8A7-434656A80550}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

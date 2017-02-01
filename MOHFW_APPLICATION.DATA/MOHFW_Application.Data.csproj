@@ -112,6 +112,9 @@
     <Compile Include="MOH_MST_STATE.cs">
       <DependentUpon>MOHFW_Service_Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="MOH_TRN_SERVICE_DATA.cs">
+      <DependentUpon>MOHFW_Service_Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

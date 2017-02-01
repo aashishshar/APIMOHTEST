@@ -18,6 +18,8 @@ namespace MOHFW_APPLICATION.DATA
         public MOHFW_MIS_Entities()
             : base("name=MOHFW_MIS_Entities")
         {
+            var ensureDLLIsCopied =
+                System.Data.Entity.SqlServer.SqlProviderServices.Instance; 
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -26,5 +28,6 @@ namespace MOHFW_APPLICATION.DATA
         }
     
         public virtual DbSet<MOH_MST_STATE> MOH_MST_STATE { get; set; }
+        public virtual DbSet<MOH_TRN_SERVICE_DATA> MOH_TRN_SERVICE_DATA { get; set; }
     }
 }

@@ -19,7 +19,7 @@ namespace MOHFW_APPLICATION.DATA
         public Nullable<decimal> StateTypeID_N { get; set; }
         public string StateName_V { get; set; }
         public Nullable<decimal> AreaCovered_N { get; set; }
-        public Nullable<System.DateTime> ActiveFrom_D { get; set; }
+        public System.DateTime ActiveFrom_D { get; set; }
         public Nullable<System.DateTime> ActiveTo_D { get; set; }
         public string ActiveFlag_C { get; set; }
         public System.DateTime CreatedOn_D { get; set; }
@@ -37,5 +37,10 @@ namespace MOHFW_APPLICATION.DATA
         public string IsFacilityReset { get; set; }
         public Nullable<decimal> PREVIOUS_StateID_N { get; set; }
         public string SPLIT_FLAG_C { get; set; }
+        public string Census_Code { get; set; }
+        public int CategoryID_N { get; set; }
+        public Nullable<decimal> ParentID_N { get; set; }
+        public string IsArchive_C { get; set; }
+        public Nullable<System.DateTime> IsArchive_D { get; set; }
     }
 }
