@@ -1,6 +1,4 @@
-﻿using MOHFW_APPLICATION.DATA;
-using MOHFW_APPLICATION.Service.Services;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -10,26 +8,8 @@ using System.Web.Http;
 
 namespace MOHFW_WEB_API_SERVICE.Controllers
 {
-    public class MOHFWController : ApiController
+    public class DataController : ApiController
     {
-        private IMohfwService mohfwService = new MohfwService();
-
-        //[Authorize]
-        [Route("api/state")]
-        public IEnumerable<MOH_MST_STATE> GetState() 
-        {
-            return mohfwService.GetStates();
-        }
-
-       
-        [Route("api/state/{id}")]
-        public IHttpActionResult Get(int id)
-        {
-            var p = mohfwService.GetState(id);
-            if (p == null)
-                return NotFound();
-            return Ok(p);
-        }
         [AllowAnonymous]
         [HttpGet]
         [Route("api/data/forall")]
@@ -57,6 +37,8 @@ namespace MOHFW_WEB_API_SERVICE.Controllers
             return Ok("Hello" + identity.Name + "Role" + string.Join(",", roles.ToList()));
 
         }
+
+
 
     }
 }

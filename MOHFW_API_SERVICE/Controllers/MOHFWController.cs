@@ -21,7 +21,7 @@ namespace MOHFW_API_SERVICE.Controllers
             return mohfwService.GetStates();
         }
 
-         [HttpGet]
+        [HttpGet]
         [Route("api/state/{id}")]
         public IHttpActionResult StateDetail(int id)
         {

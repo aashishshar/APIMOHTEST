@@ -19,6 +19,7 @@ namespace MOHFW_WEB_API_SERVICE
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
         }
     }
 }
